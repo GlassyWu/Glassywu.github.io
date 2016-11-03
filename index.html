@@ -141,6 +141,58 @@
       <div class="body-wrap">
         
   
+    <article id="post-去掉字符串的所有标点符号和空格" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/去掉字符串的所有标点符号和空格/">去掉字符串的所有标点符号和空格</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>‘’’<br>function palindrome(str) {</p>
+<p>  str=str.replace(/[\ |~|`|!|\@|#|\$|\%|\^|\&amp;|*|(|)|-|_|+|\=|||\|[|]|{|}|\;|\:|\”|\’|\,|\&lt;|.|>|\/|\?]/g,””);//去掉符号<br>  str=str.replace(/\s+/g);//去掉空格<br>  str=str.toLowerCase();<br>  var arry=str.split(“”);//strring-&gt;array<br>  arry=arry.reverse();<br>  var restr=arry.join(“”);//array-&gt;string<br>  if(restr===str){<br>  return true;<br>  }<br>  return false;<br>}</p>
+<p>palindrome(aba);//true;<br>‘’’</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/03/去掉字符串的所有标点符号和空格/" class="archive-article-date">
+  	<time datetime="2016-11-03T07:32:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-03</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/js-正则表达式/">js 正则表达式</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-20161031" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
