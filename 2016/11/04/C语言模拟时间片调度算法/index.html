@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>glassy</title>
+  <title>C语言模拟时间片调度算法 | glassy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="glassy">
-<meta property="og:url" content="http://Glassywu.github.io/index.html">
+  <meta name="description" content="用简单的C语言模拟进程调度:)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言模拟时间片调度算法">
+<meta property="og:url" content="http://Glassywu.github.io/2016/11/04/C语言模拟时间片调度算法/index.html">
 <meta property="og:site_name" content="glassy">
+<meta property="og:description" content="用简单的C语言模拟进程调度:)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:updated_time" content="2016-11-03T16:42:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="glassy">
+<meta name="twitter:title" content="C语言模拟时间片调度算法">
+<meta name="twitter:description" content="用简单的C语言模拟进程调度:)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
   
     <link rel="alternative" href="/atom.xml" title="glassy" type="application/atom+xml">
   
@@ -139,9 +143,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-C语言模拟时间片调度算法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-C语言模拟时间片调度算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -150,8 +152,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/04/C语言模拟时间片调度算法/">C语言模拟时间片调度算法</a>
+    <h1 class="article-title" itemprop="name">
+      C语言模拟时间片调度算法
     </h1>
   
 
@@ -176,55 +178,37 @@
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-去掉字符串的所有标点符号和空格" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/03/去掉字符串的所有标点符号和空格/">去掉字符串的所有标点符号和空格</a>
-    </h1>
   
+    <a href="/2016/11/03/去掉字符串的所有标点符号和空格/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">去掉字符串的所有标点符号和空格</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line"> </div><div class="line">  str=str.replace(<span class="regexp">/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&amp;|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\&#123;|\&#125;|\;|\:|\"|\'|\,|\&lt;|\.|\&gt;|\/|\?]/g</span>,<span class="string">""</span>);<span class="comment">//去掉符号</span></div><div class="line">  str=str.replace(<span class="regexp">/\s+/g</span>);<span class="comment">//去掉空格</span></div><div class="line">  str=str.toLowerCase();</div><div class="line">  <span class="keyword">var</span> arry=str.split(<span class="string">""</span>);<span class="comment">//strring-&gt;array</span></div><div class="line">  arry=arry.reverse();</div><div class="line">  <span class="keyword">var</span> restr=arry.join(<span class="string">""</span>);<span class="comment">//array-&gt;string</span></div><div class="line">  <span class="keyword">if</span>(restr===str)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(aba);<span class="comment">//true;</span></div></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/03/去掉字符串的所有标点符号和空格/" class="archive-article-date">
-  	<time datetime="2016-11-03T07:32:30.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-03</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/js-正则表达式/">js 正则表达式</a>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
@@ -232,156 +216,6 @@
 
 
 
-
-
-
-  
-    <article id="post-20161031" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/20161031/">20161031</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有种强烈地想要变得强大的冲动，好讨厌在别人问我how to do的时候，我只能回答果咩:(<br>我希望有一天可以和他们谈笑风生，兴趣使然一起写project或者维护project,所以，暂时<br>结束一些无聊的social,毕竟我始终觉得talk is cheap.<br>In solitude,be a multitude to yourself.:)<br>以上</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/31/20161031/" class="archive-article-date">
-  	<time datetime="2016-10-31T04:46:29.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-31</time>
-</a>
-      
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-20161026" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/26/20161026/">20161026</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  先定个小目标，写个小玩具，(ง •̀_•́)ง,这周内完成~</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/26/20161026/" class="archive-article-date">
-  	<time datetime="2016-10-25T16:01:47.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-26</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/web/">web</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/21/hello/">hello</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hello~≖‿≖✧</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/21/hello/" class="archive-article-date">
-  	<time datetime="2016-10-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-21</time>
-</a>
-      
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/test/">test</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
 
 
       </div>
@@ -403,8 +237,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
