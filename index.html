@@ -141,6 +141,59 @@
       <div class="body-wrap">
         
   
+    <article id="post-javascript面向对象学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/30/javascript面向对象学习笔记/">javascript面向对象学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a=&quot;red&quot;;</div><div class="line">var b=a;</div><div class="line"></div><div class="line">console.log(a);//&quot;red&quot;</div><div class="line">console.log(b);//&quot;red&quot;</div><div class="line"></div><div class="line">a=&quot;bule&quot;;</div><div class="line"></div><div class="line">console.log(a);//&quot;bule&quot;</div><div class="line">console.log(b);//&quot;red&quot;</div></pre></td></tr></table></figure>
+<p>a和b在不同的内存地址</p>
+<p>判断原始类型的最佳方法是用typeof<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">console.log(typeof 2333)//&quot;number&quot;</div><div class="line"></div><div class="line">console.log(typeof null)//&quot;object&quot;</div><div class="line">//这里比较特殊，null指向的是一个空对象指针，所以返回object</div><div class="line">//正确的判断null类型的写法是</div><div class="line">console.log(value === null)//&quot;true or false&quot;</div></pre></td></tr></table></figure></p>
+<h1 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h1><p>string/number/boolean拥有原始方法<br>null 和undefined没有原始方法<br>ps:原始类型都不是对象</p>
+<h1 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h1><p>是指js中的对象</p>
+<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var object1=new Object();</div><div class="line">var object2=object1;</div><div class="line">//两个对象都指向同一个对象</div></pre></td></tr></table></figure>
+<h4 id="对象引用解除"><a href="#对象引用解除" class="headerlink" title="对象引用解除"></a>对象引用解除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var object=new Object</div><div class="line">...</div><div class="line">object=null;//解除方法</div></pre></td></tr></table></figure>
+<h4 id="添加删除属性"><a href="#添加删除属性" class="headerlink" title="添加删除属性"></a>添加删除属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var object1=new Object();</div><div class="line">var object2=object1;</div><div class="line"></div><div class="line">object.mySet=&quot;2333&quot;;//js可以随时添加或者删除属性</div><div class="line"></div><div class="line">console.log(object.mySet);//&quot;2333&quot;</div><div class="line">//object2和object1指向同一个对象</div></pre></td></tr></table></figure>
+<h1 id="内建类型"><a href="#内建类型" class="headerlink" title="内建类型"></a>内建类型</h1><p>Object \<br>Array \<br>Date\<br>Error\<br>Function\<br>RegExp\<br>可以用new 来实例化每一个内建引用类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var book=&#123;</div><div class="line">    name: &quot;a book&quot;,//标识符做属性名</div><div class="line">    year: 2016</div><div class="line">    </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var book1=&#123;</div><div class="line">    &quot;name&quot;: &quot;a book&quot;,//字符串做属性名，比较适用于如果属性名有特殊符号的时候</div><div class="line">    year: 2016</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//定义数组</div><div class="line">var num=[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;];//字面形式命名（相对的是构造函数命名）</div><div class="line">//等价于</div><div class="line">var num=new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/30/javascript面向对象学习笔记/" class="archive-article-date">
+  	<time datetime="2016-12-30T15:31:14.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-30</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2016的glassy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
