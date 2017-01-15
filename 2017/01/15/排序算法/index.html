@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>20170115 | glassy</title>
+  <title>排序算法 | glassy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生而为人，我很抱歉">
+  <meta name="description" content="插入排序1234567891011121314151617181920212223242526int main()&amp;#123;	int a[6]=&amp;#123;3,2,5,1,4&amp;#125;;	int temp;	int sorted_index;	for(int  i=1;i&amp;lt;5;i++)	&amp;#123;		if(a[i]&amp;lt;a[i-1])//如果a[i]&amp;gt;a[i-1]直接插入，否则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20170115">
-<meta property="og:url" content="http://Glassywu.github.io/2017/01/15/20170115/index.html">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="http://Glassywu.github.io/2017/01/15/排序算法/index.html">
 <meta property="og:site_name" content="glassy">
-<meta property="og:description" content="生而为人，我很抱歉">
-<meta property="og:updated_time" content="2017-01-15T03:40:50.000Z">
+<meta property="og:description" content="插入排序1234567891011121314151617181920212223242526int main()&amp;#123;	int a[6]=&amp;#123;3,2,5,1,4&amp;#125;;	int temp;	int sorted_index;	for(int  i=1;i&amp;lt;5;i++)	&amp;#123;		if(a[i]&amp;lt;a[i-1])//如果a[i]&amp;gt;a[i-1]直接插入，否则">
+<meta property="og:updated_time" content="2017-01-15T07:36:09.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20170115">
-<meta name="twitter:description" content="生而为人，我很抱歉">
+<meta name="twitter:title" content="排序算法">
+<meta name="twitter:description" content="插入排序1234567891011121314151617181920212223242526int main()&amp;#123;	int a[6]=&amp;#123;3,2,5,1,4&amp;#125;;	int temp;	int sorted_index;	for(int  i=1;i&amp;lt;5;i++)	&amp;#123;		if(a[i]&amp;lt;a[i-1])//如果a[i]&amp;gt;a[i-1]直接插入，否则">
   
     <link rel="alternative" href="/atom.xml" title="glassy" type="application/atom+xml">
   
@@ -143,7 +143,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-20170115" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-排序算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -153,7 +153,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      20170115
+      排序算法
     </h1>
   
 
@@ -161,13 +161,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="生而为人，我很抱歉"><a href="#生而为人，我很抱歉" class="headerlink" title="生而为人，我很抱歉"></a>生而为人，我很抱歉</h3>
+        <h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int a[6]=&#123;3,2,5,1,4&#125;;</div><div class="line">	int temp;</div><div class="line">	int sorted_index;</div><div class="line">	for(int  i=1;i&lt;5;i++)</div><div class="line">	&#123;</div><div class="line">		if(a[i]&lt;a[i-1])//如果a[i]&gt;a[i-1]直接插入，否则查找合适的位置进行插入 </div><div class="line">		&#123;</div><div class="line">			sorted_index=i-1;</div><div class="line">			temp=a[i];</div><div class="line">			a[i]=a[i-1];//此时空出a[i-1]的位置 </div><div class="line">			</div><div class="line">			while(temp&lt;a[sorted_index])//找到合适的插入位置 </div><div class="line">			&#123;</div><div class="line">				//移动数列</div><div class="line">				a[sorted_index+1]=a[sorted_index];</div><div class="line">				sorted_index--;</div><div class="line">			&#125;</div><div class="line">			a[sorted_index+1]=temp; </div><div class="line">		&#125;</div><div class="line">		print(a,5);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2017/01/15/20170115/" class="archive-article-date">
-  	<time datetime="2017-01-15T03:38:08.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-15</time>
+      <a href="/2017/01/15/排序算法/" class="archive-article-date">
+  	<time datetime="2017-01-15T07:33:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-15</time>
 </a>
       
       
@@ -180,18 +180,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/15/排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          排序算法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/13/mark-系列/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mark 系列</div>
+    <a href="/2017/01/15/20170115/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">20170115</div>
       <i class="icon-circle-right"></i>
     </a>
   
