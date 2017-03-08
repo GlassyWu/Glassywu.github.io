@@ -82,16 +82,16 @@
 
     <div class="entry-content">
       
-        <p>###第一题：<br>煤球数目</p>
+        <h3 id="第一题："><a href="#第一题：" class="headerlink" title="第一题："></a>第一题：</h3><p>煤球数目</p>
 <p>有一堆煤球，堆成三角棱锥形。具体：<br>第一层放1个，<br>第二层3个（排列成三角形），<br>第三层6个（排列成三角形），<br>第四层10个（排列成三角形），<br>….<br>如果一共有100层，共有多少个煤球？</p>
 <p>请填表示煤球总数目的数字。</p>
-<p>###分析:<br>解法1：画煤球（注意是每句话一个煤球堆），得到规律A(n)=S(n)+n;//S(n)为前一堆煤球的总个数<br>解法2：数列求通项公式。A(1)=1,A(2)=3,A(3)=6,A(4)=10…叠加法求得通项公式A(n)=1+2+3+…+n=nx(1+n)/2;<br>最后求和。</p>
-<p>###第二题：<br>生日蜡烛</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析:"></a>分析:</h3><p>解法1：画煤球（注意是每句话一个煤球堆），得到规律A(n)=S(n)+n;//S(n)为前一堆煤球的总个数<br>解法2：数列求通项公式。A(1)=1,A(2)=3,A(3)=6,A(4)=10…叠加法求得通项公式A(n)=1+2+3+…+n=nx(1+n)/2;<br>最后求和。</p>
+<h3 id="第二题："><a href="#第二题：" class="headerlink" title="第二题："></a>第二题：</h3><p>生日蜡烛</p>
 <p>某君从某年开始每年都举办一次生日party，并且每次都要吹熄与年龄相同根数的蜡烛。</p>
 <p>现在算起来，他一共吹熄了236根蜡烛。</p>
 <p>请问，他从多少岁开始过生日party的？</p>
 <p>请填写他开始过生日party的年龄数。</p>
-<p>###分析:<br>暴力枚举<br>设start为开始过生日的岁数，now为现在的岁数，从1开始枚举</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析:"></a>分析:</h3><p>暴力枚举<br>设start为开始过生日的岁数，now为现在的岁数，从1开始枚举</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int start,now;</div><div class="line">	for(start=1;start&lt;236;start++)&#123;</div><div class="line">		for(now=start;now&lt;236;now++)&#123;</div><div class="line">			int sum=0;</div><div class="line">			for(int i=start;i&lt;=now;i++)&#123;</div><div class="line">				sum+=i;</div><div class="line">			&#125;</div><div class="line">			if(sum==236)&#123;</div><div class="line">				cout&lt;&lt;start&lt;&lt;&quot; &quot;&lt;&lt;now&lt;&lt;endl;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output: 26 33</div></pre></td></tr></table></figure>
       
     </div><!-- .entry-content -->
@@ -294,48 +294,6 @@
 
 
   
-    <article id="post-20170115" class="post-20170115 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/01/15/20170115/">20170115</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/01/15/20170115/" data-id="cizzp5bi10004a4i7fu27okvy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h3 id="生而为人，我很抱歉"><a href="#生而为人，我很抱歉" class="headerlink" title="生而为人，我很抱歉"></a>生而为人，我很抱歉</h3>
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/01/15/20170115/">
-    <time datetime="2017-01-15T03:38:08.000Z" class="entry-date">
-        2017-01-15
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
     <article id="post-javascript面向对象学习笔记" class="post-javascript面向对象学习笔记 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -519,6 +477,54 @@
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
   <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-去掉字符串的所有标点符号和空格" class="post-去掉字符串的所有标点符号和空格 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2016/11/03/去掉字符串的所有标点符号和空格/">去掉字符串的所有标点符号和空格</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/03/去掉字符串的所有标点符号和空格/" data-id="cizzp5bip000ca4i7s5sh7gz3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line"> </div><div class="line">  str=str.replace(<span class="regexp">/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&amp;|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\&#123;|\&#125;|\;|\:|\"|\'|\,|\&lt;|\.|\&gt;|\/|\?]/g</span>,<span class="string">""</span>);<span class="comment">//去掉符号</span></div><div class="line">  str=str.replace(<span class="regexp">/\s+/g</span>);<span class="comment">//去掉空格</span></div><div class="line">  str=str.toLowerCase();</div><div class="line">  <span class="keyword">var</span> arry=str.split(<span class="string">""</span>);<span class="comment">//strring-&gt;array</span></div><div class="line">  arry=arry.reverse();</div><div class="line">  <span class="keyword">var</span> restr=arry.join(<span class="string">""</span>);<span class="comment">//array-&gt;string</span></div><div class="line">  <span class="keyword">if</span>(restr===str)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(aba);<span class="comment">//true;</span></div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/11/03/去掉字符串的所有标点符号和空格/">
+    <time datetime="2016-11-03T07:32:30.000Z" class="entry-date">
+        2016-11-03
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/js-正则表达式/">js 正则表达式</a>
   </div>
 
     
