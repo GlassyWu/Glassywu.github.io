@@ -30,7 +30,7 @@
 有一堆煤球，堆成三角棱锥形。具体：第一层放1个，第二层3个（排列成三角形），第三层6个（排列成三角形），第四层10个（排列成三角形），….如果一共有100层，共有多少个煤球？
 请填表示煤球总数目的数字。
 分析:解法1：画煤球（注意是每句话一个煤球堆），得到规律A(n)=S(n)+n;//S(n)为前一堆煤球的总个数解法2：数列求通项公式。A(1)=1,A(2)=3,A(3)=6,">
-<meta property="og:updated_time" content="2017-03-08T13:55:12.000Z">
+<meta property="og:updated_time" content="2017-03-08T14:00:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016第七届蓝桥杯个人赛部分题解">
 <meta name="twitter:description" content="第一题：煤球数目
@@ -110,13 +110,13 @@
 <h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析:"></a>分析:</h3><p>暴力枚举<br>设start为开始过生日的岁数，now为现在的岁数，从1开始枚举</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int start,now;</div><div class="line">	for(start=1;start&lt;236;start++)&#123;</div><div class="line">		for(now=start;now&lt;236;now++)&#123;</div><div class="line">			int sum=0;</div><div class="line">			for(int i=start;i&lt;=now;i++)&#123;</div><div class="line">				sum+=i;</div><div class="line">			&#125;</div><div class="line">			if(sum==236)&#123;</div><div class="line">				cout&lt;&lt;start&lt;&lt;&quot; &quot;&lt;&lt;now&lt;&lt;endl;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output: 26 33</div></pre></td></tr></table></figure>
 <h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>凑算式</p>
-<pre><code>B      DEF
-</code></pre><p>A + — + ——- = 10<br>     C      GHI</p>
-<p>（如果显示有问题，可以参见【图1.jpg】）</p>
+<p>A+B/C+DEF/GHI=10     </p>
 <p>这个算式中A~I代表1~9的数字，不同的字母代表不同的数字。</p>
 <p>比如：<br>6+8/3+952/714 就是一种解法，<br>5+3/1+972/486 是另一种解法。</p>
 <p>这个算式一共有多少种解法？</p>
-<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>A~I分别是1~9的数字，所以可以把A~I分别看成是9个空，尝试在里面填数，直到符合该式子<br>也就是说，生成全排列<br>ps:为了避免精度问题，可以把原来的式子通分变成乘法的形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int ans=0;</div><div class="line">int num[10];//分别代表A~I</div><div class="line">int vis[10];</div><div class="line"></div><div class="line">void test()&#123;//测试是否可行</div><div class="line">	if(num[1]*(num[6]*100+num[7]*10+num[8])+(num[3]*100+num[4]*10+num[5])*num[2]==(10-num[0])*(num[2]*(num[6]*100+num[7]*10+num[8])))</div><div class="line">		ans++; </div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs(int cur)&#123;</div><div class="line">	if(cur==9)&#123;</div><div class="line">		test();</div><div class="line">		return ;</div><div class="line">	&#125;</div><div class="line">	for(int i=1;i&lt;10;i++)&#123;</div><div class="line">		if(!vis[i])&#123;</div><div class="line">			vis[i]=1;</div><div class="line">			num[cur]=i;//尝试填数 </div><div class="line">			dfs(cur+1);</div><div class="line">			vis[i]=0;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125; </div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	memset(vis,0,sizeof(vis));</div><div class="line">	dfs(0);</div><div class="line">	cout&lt;&lt;ans&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">//output:29</div></pre></td></tr></table></figure>
+
       
     </div><!-- .entry-content -->
 
