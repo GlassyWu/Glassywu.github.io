@@ -30,7 +30,7 @@
 有一堆煤球，堆成三角棱锥形。具体：第一层放1个，第二层3个（排列成三角形），第三层6个（排列成三角形），第四层10个（排列成三角形），….如果一共有100层，共有多少个煤球？
 请填表示煤球总数目的数字。
 分析:解法1：画煤球（注意是每句话一个煤球堆），得到规律A(n)=S(n)+n;//S(n)为前一堆煤球的总个数解法2：数列求通项公式。A(1)=1,A(2)=3,A(3)=6,">
-<meta property="og:updated_time" content="2017-03-08T13:10:58.000Z">
+<meta property="og:updated_time" content="2017-03-08T13:55:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016第七届蓝桥杯个人赛部分题解">
 <meta name="twitter:description" content="第一题：煤球数目
@@ -109,6 +109,14 @@
 <p>请填写他开始过生日party的年龄数。</p>
 <h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析:"></a>分析:</h3><p>暴力枚举<br>设start为开始过生日的岁数，now为现在的岁数，从1开始枚举</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int start,now;</div><div class="line">	for(start=1;start&lt;236;start++)&#123;</div><div class="line">		for(now=start;now&lt;236;now++)&#123;</div><div class="line">			int sum=0;</div><div class="line">			for(int i=start;i&lt;=now;i++)&#123;</div><div class="line">				sum+=i;</div><div class="line">			&#125;</div><div class="line">			if(sum==236)&#123;</div><div class="line">				cout&lt;&lt;start&lt;&lt;&quot; &quot;&lt;&lt;now&lt;&lt;endl;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output: 26 33</div></pre></td></tr></table></figure>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>凑算式</p>
+<pre><code>B      DEF
+</code></pre><p>A + — + ——- = 10<br>     C      GHI</p>
+<p>（如果显示有问题，可以参见【图1.jpg】）</p>
+<p>这个算式中A~I代表1~9的数字，不同的字母代表不同的数字。</p>
+<p>比如：<br>6+8/3+952/714 就是一种解法，<br>5+3/1+972/486 是另一种解法。</p>
+<p>这个算式一共有多少种解法？</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3>
       
     </div><!-- .entry-content -->
 
