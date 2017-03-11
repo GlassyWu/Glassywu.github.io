@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="第六题方格填数
+如下的10个格子   +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+
+填入0~9的数字。要求：连续的两个数字不能相邻。（左右、上下、对角都算相邻）
+一共有多少种可能的填数方案？
+请填写表示方案数" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>2016第七届蓝桥杯个人赛部分解（二） | glassy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第六题方格填数
+如下的10个格子   +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+
+填入0~9的数字。要求：连续的两个数字不能相邻。（左右、上下、对角都算相邻）
+一共有多少种可能的填数方案？
+请填写表示方案数目的整数。
+分析把上面的图看成是在9个格子填数，先试着填数，然后判断是否符合就行了，枚举问题。只是从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016第七届蓝桥杯个人赛部分解（二）">
+<meta property="og:url" content="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/index.html">
+<meta property="og:site_name" content="glassy">
+<meta property="og:description" content="第六题方格填数
+如下的10个格子   +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+
+填入0~9的数字。要求：连续的两个数字不能相邻。（左右、上下、对角都算相邻）
+一共有多少种可能的填数方案？
+请填写表示方案数目的整数。
+分析把上面的图看成是在9个格子填数，先试着填数，然后判断是否符合就行了，枚举问题。只是从">
+<meta property="og:updated_time" content="2017-03-11T08:57:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016第七届蓝桥杯个人赛部分解（二）">
+<meta name="twitter:description" content="第六题方格填数
+如下的10个格子   +–+–+–+   |  |  |  |+–+–+–+–+|  |  |  |  |+–+–+–+–+|  |  |  |+–+–+–+
+填入0~9的数字。要求：连续的两个数字不能相邻。（左右、上下、对角都算相邻）
+一共有多少种可能的填数方案？
+请填写表示方案数目的整数。
+分析把上面的图看成是在9个格子填数，先试着填数，然后判断是否符合就行了，枚举问题。只是从">
+  
+  
+    <link rel="icon" href="favicon1.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="glassy" rel="home">glassy</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">glassy</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="w-2016第七届蓝桥杯个人赛部分解（二）" class="w-2016第七届蓝桥杯个人赛部分解（二） post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      2016第七届蓝桥杯个人赛部分解（二）
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj050qac5000134i7r85fsw1w" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h3><p>方格填数</p>
+<p>如下的10个格子<br>   +–+–+–+<br>   |  |  |  |<br>+–+–+–+–+<br>|  |  |  |  |<br>+–+–+–+–+<br>|  |  |  |<br>+–+–+–+</p>
+<p>填入0~9的数字。要求：连续的两个数字不能相邻。<br>（左右、上下、对角都算相邻）</p>
+<p>一共有多少种可能的填数方案？</p>
+<p>请填写表示方案数目的整数。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>把上面的图看成是在9个格子填数，先试着填数，然后判断是否符合就行了，枚举问题。<br>只是从一维变成了二维，不过也没什么。<br>判断是否可行（即连续的数不能放在上下，左右，对角线)时，可以先准备好坐标数组，以便后面的遍历。<br>即代码中的index[8][2].<br>至于连续的数fabs(mapp[i][j],mapp[x][y])!=1就行了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;Cmath&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int mapp[3][4];</div><div class="line">int flag[3][4];</div><div class="line">int ans=0;</div><div class="line">int index[8][2]=&#123;-1,1,0,1,1,1,-1,0,1,0,-1,-1,0,-1,1,-1&#125;;//用来查找周围的元素 </div><div class="line">int vis[10];</div><div class="line"></div><div class="line">void init()&#123;</div><div class="line">    //对标记数组进行预处理（图中有两个空是没有的)</div><div class="line">	for(int i=0;i&lt;3;i++)</div><div class="line">		for(int j=0;j&lt;4;j++)</div><div class="line">			flag[i][j]=1;</div><div class="line">	flag[0][0]=0;</div><div class="line">	flag[2][3]=0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void test()&#123;//测试是否可行</div><div class="line">	int ok=1;</div><div class="line">	for(int i=0;i&lt;3;i++)</div><div class="line">		for(int j=0;j&lt;4;j++)&#123;</div><div class="line">			if(!flag[i][j]) continue;//排除两个空格</div><div class="line">			//检查左右上，下，对角 </div><div class="line">			for(int k=0;k&lt;8;k++)&#123;</div><div class="line">				int x=i+index[k][0];</div><div class="line">				int y=j+index[k][1];</div><div class="line">				if(x&lt;0||y&lt;0||x&gt;=3||y&gt;=4||flag[x][y]==0) continue;</div><div class="line">				if(fabs(mapp[i][j]-mapp[x][y])==1) ok=0;</div><div class="line">			&#125; </div><div class="line">		&#125; </div><div class="line">		if(ok) ans++;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">void dfs(int cur)&#123;//每个格子进行枚举 </div><div class="line">	int x=cur/4;//每行有4个，算出当前行数</div><div class="line">	int y=cur%4;//每行4个，算出列数</div><div class="line">	if(x==3)&#123;</div><div class="line">		test();</div><div class="line">		return ;</div><div class="line">	&#125;</div><div class="line">	if(flag[x][y])&#123;</div><div class="line">		//试着填数</div><div class="line">		for(int i=0;i&lt;10;i++)&#123;</div><div class="line">			if(!vis[i])&#123;</div><div class="line">				vis[i]=1;</div><div class="line">				mapp[x][y]=i;</div><div class="line">				dfs(cur+1);</div><div class="line">				vis[i]=0;//恢复标记!</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125; </div><div class="line">	&#125;</div><div class="line">	else&#123;</div><div class="line">		dfs(cur+1);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	init();</div><div class="line">	dfs(0);</div><div class="line">	cout&lt;&lt;ans&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output:1580</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/">
+    <time datetime="2017-03-11T08:43:42.000Z" class="entry-date">
+        2017-03-11
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="w-2016第七届蓝桥杯个人赛部分解（二）" data-title="2016第七届蓝桥杯个人赛部分解（二）" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'glassywu'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/">2016第七届蓝桥杯个人赛部分解（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/11/分享音乐1-ovo/">分享音乐1 ovo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/09/分享音乐ovo/">分享音乐ovo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/07/2016第七届蓝桥杯个人赛部分题解/">2016第七届蓝桥杯个人赛部分题解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/07/vs2015的工具箱不见了/">vs2015的工具箱不见了</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 glassy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    <span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span id="busuanzi_container_site_uv">
+    访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
