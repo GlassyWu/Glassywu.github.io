@@ -61,6 +61,65 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-2016第七届蓝桥杯个人赛部分解-四）" class="post-2016第七届蓝桥杯个人赛部分解-四） post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/" data-id="cj0jkzv860004hki7zbatlibl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>算法可能很辣鸡ovo<br>水平有限ovo<br>欢迎指正&gt; &lt;</p>
+<h3 id="第八题："><a href="#第八题：" class="headerlink" title="第八题："></a>第八题：</h3><p>四平方和</p>
+<p>四平方和定理，又称为拉格朗日定理：<br>每个正整数都可以表示为至多4个正整数的平方和。<br>如果把0包括进去，就正好可以表示为4个数的平方和。</p>
+<p>比如：<br>5 = 0^2 + 0^2 + 1^2 + 2^2<br>7 = 1^2 + 1^2 + 1^2 + 2^2<br>（^符号表示乘方的意思）</p>
+<p>对于一个给定的正整数，可能存在多种平方和的表示法。<br>要求你对4个数排序：<br>0 &lt;= a &lt;= b &lt;= c &lt;= d<br>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法</p>
+<p>程序输入为一个正整数N (N&lt;5000000)<br>要求输出4个非负整数，按从小到大排序，中间用空格分开</p>
+<p>例如，输入：<br>5<br>则程序应该输出：<br>0 0 1 2</p>
+<p>再例如，输入：<br>12<br>则程序应该输出：<br>0 2 2 2</p>
+<p>再例如，输入：<br>773535<br>则程序应该输出：<br>1 1 267 838</p>
+<p>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗  &lt; 3000ms</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>水题，暴力枚举就行<br>但是可以再优雅一点点:)<br>先枚举前三个数，然后计算差值，判断是否是平方数，不是的话没纪要继续枚举了<br>复杂度: O(n^3/2)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Cmath&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">int</span> ok=<span class="number">0</span>; </div><div class="line">	<span class="keyword">int</span> sum;</div><div class="line">	<span class="built_in">cin</span>&gt;&gt;sum;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="built_in">sqrt</span>(sum);i++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="built_in">sqrt</span>(sum);j++)&#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=<span class="built_in">sqrt</span>(sum);k++)&#123;</div><div class="line">				<span class="comment">//最外层循环只要判断差是否可以开方 </span></div><div class="line">				<span class="keyword">int</span> tmp=sum-i*i-j*j-k*k; </div><div class="line">				<span class="keyword">double</span> a=<span class="built_in">sqrt</span>(tmp);</div><div class="line">				<span class="keyword">if</span>(a==(<span class="keyword">int</span>)a)&#123;<span class="comment">//是平方数 </span></div><div class="line">					</div><div class="line">					<span class="built_in">printf</span>(<span class="string">"%d %d %d %d\n"</span>,i,j,k,(<span class="keyword">int</span>)a);</div><div class="line">					ok=<span class="number">1</span>;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>(ok) <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(ok) <span class="keyword">break</span>;	</div><div class="line">	&#125;</div><div class="line">		</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外发现有种思路おもしろい，放上链接:)<br><a href="https://shenzekun.github.io/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98.html" target="_blank" rel="external">https://shenzekun.github.io/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98.html</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">
+    <time datetime="2017-03-21T13:24:54.000Z" class="entry-date">
+        2017-03-21
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+  
     <article id="post-20170320画" class="post-20170320画 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +135,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0iaw13h0009igi7t6cl7zq4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0jkzv8t0006hki78zuqlx2z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -123,7 +182,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0iaw1380008igi7g0y219bn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0jkzvbn000fhki7gi97dm7j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -170,7 +229,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0iaw13o000digi7io8s5sm0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0jkzvha000mhki7psg0sg6c" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -224,7 +283,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0iaw146000jigi7qowty9nk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0jkzvhp000ohki7eop0nd36" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -271,7 +330,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0iaw12x0004igi77wtomor0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0jkzvbt000hhki77qgctbg5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -325,7 +384,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0iaw14k000rigi74ulev6tn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0jkzvk3000uhki7a2b6t6wd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -377,7 +436,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/09/分享音乐ovo/" data-id="cj0iaw14r000vigi7cxr9x2pd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/09/分享音乐ovo/" data-id="cj0jkzvkl000xhki7ln5dzm99" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -431,7 +490,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/2016第七届蓝桥杯个人赛部分题解/" data-id="cj0iaw14i000pigi73auox5cn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/2016第七届蓝桥杯个人赛部分题解/" data-id="cj0jkzv6r0002hki79ju7f8qg" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -508,7 +567,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/vs2015的工具箱不见了/" data-id="cj0iaw13w000gigi78fn2w1sa" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/vs2015的工具箱不见了/" data-id="cj0jkzvg5000jhki727bquru8" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -523,48 +582,6 @@
     <a href="/2017/03/07/vs2015的工具箱不见了/">
     <time datetime="2017-03-07T13:44:30.000Z" class="entry-date">
         2017-03-07
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-  
-    <article id="post-20170305" class="post-20170305 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/03/05/20170305/">20170305</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/05/20170305/" data-id="cj0iaw1370007igi7ebcws08v" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>努力做个开心的人吧:)</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/03/05/20170305/">
-    <time datetime="2017-03-05T12:48:13.000Z" class="entry-date">
-        2017-03-05
     </time>
 </a>
     
@@ -601,7 +618,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -611,6 +628,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
+          </li>
         
           <li>
             <a href="/2017/03/21/20170320画/">20170320画</a>
@@ -626,10 +647,6 @@
         
           <li>
             <a href="/2017/03/13/分享音乐2/">分享音乐2</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/">2016第七届蓝桥杯个人赛部分解（二）</a>
           </li>
         
       </ul>
