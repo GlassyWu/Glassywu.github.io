@@ -61,6 +61,83 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-2016第七届蓝桥杯个人赛部分题解" class="post-2016第七届蓝桥杯个人赛部分题解 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/03/07/2016第七届蓝桥杯个人赛部分题解/">2016第七届蓝桥杯个人赛部分题解</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/2016第七届蓝桥杯个人赛部分题解/" data-id="cj0lyjoo400094ki76f6aqouk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>算法可能很辣鸡ovo<br>水平有限ovo<br>欢迎指正&gt; &lt;</p>
+<h3 id="第一题："><a href="#第一题：" class="headerlink" title="第一题："></a>第一题：</h3><p>煤球数目</p>
+<p>有一堆煤球，堆成三角棱锥形。具体：<br>第一层放1个，<br>第二层3个（排列成三角形），<br>第三层6个（排列成三角形），<br>第四层10个（排列成三角形），<br>….<br>如果一共有100层，共有多少个煤球？</p>
+<p>请填表示煤球总数目的数字。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析:"></a>分析:</h3><p>解法1：画煤球（注意是每句话一个煤球堆），得到规律A(n)=S(n-1)+n;//S(n-1)为前一堆煤球的总个数<br>解法2：数列求通项公式。A(1)=1,A(2)=3,A(3)=6,A(4)=10…叠加法求得通项公式A(n)=1+2+3+…+n=nx(1+n)/2;<br>最后求和。</p>
+<h3 id="第二题："><a href="#第二题：" class="headerlink" title="第二题："></a>第二题：</h3><p>生日蜡烛</p>
+<p>某君从某年开始每年都举办一次生日party，并且每次都要吹熄与年龄相同根数的蜡烛。</p>
+<p>现在算起来，他一共吹熄了236根蜡烛。</p>
+<p>请问，他从多少岁开始过生日party的？</p>
+<p>请填写他开始过生日party的年龄数。</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析:"></a>分析:</h3><p>暴力枚举<br>设start为开始过生日的岁数，now为现在的岁数，从1开始枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int start,now;</div><div class="line">	for(start=1;start&lt;236;start++)&#123;</div><div class="line">		for(now=start;now&lt;236;now++)&#123;</div><div class="line">			int sum=0;</div><div class="line">			for(int i=start;i&lt;=now;i++)&#123;</div><div class="line">				sum+=i;</div><div class="line">			&#125;</div><div class="line">			if(sum==236)&#123;</div><div class="line">				cout&lt;&lt;start&lt;&lt;&quot; &quot;&lt;&lt;now&lt;&lt;endl;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output: 26 33</div></pre></td></tr></table></figure>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>凑算式</p>
+<p>A+B/C+DEF/GHI=10     </p>
+<p>这个算式中A~I代表1~9的数字，不同的字母代表不同的数字。</p>
+<p>比如：<br>6+8/3+952/714 就是一种解法，<br>5+3/1+972/486 是另一种解法。</p>
+<p>这个算式一共有多少种解法？</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>A~I分别是1~9的数字，所以可以把A~I分别看成是9个空，尝试在里面填数，直到符合该式子<br>也就是说，生成全排列<br>ps:为了避免精度问题，可以把原来的式子通分变成乘法的形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int ans=0;</div><div class="line">int num[10];//分别代表A~I</div><div class="line">int vis[10];</div><div class="line"></div><div class="line">void test()&#123;//测试是否可行</div><div class="line">	if(num[1]*(num[6]*100+num[7]*10+num[8])+(num[3]*100+num[4]*10+num[5])*num[2]==(10-num[0])*(num[2]*(num[6]*100+num[7]*10+num[8])))</div><div class="line">		ans++; </div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs(int cur)&#123;</div><div class="line">	if(cur==9)&#123;</div><div class="line">		test();</div><div class="line">		return ;</div><div class="line">	&#125;</div><div class="line">	for(int i=1;i&lt;10;i++)&#123;</div><div class="line">		if(!vis[i])&#123;</div><div class="line">			vis[i]=1;</div><div class="line">			num[cur]=i;//尝试填数 </div><div class="line">			dfs(cur+1);</div><div class="line">			vis[i]=0;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125; </div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	memset(vis,0,sizeof(vis));</div><div class="line">	dfs(0);</div><div class="line">	cout&lt;&lt;ans&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">//output:29</div></pre></td></tr></table></figure>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>快速排序</p>
+<p>排序在各种场合经常被用到。<br>快速排序是十分常用的高效率的算法。</p>
+<p>其思想是：先选一个“标尺”，<br>用它把整个队列过一遍筛子，<br>以保证：其左边的元素都不大于它，其右边的元素都不小于它。</p>
+<p>这样，排序问题就被分割为两个子区间。<br>再分别对子区间排序就可以了。</p>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><p>只要理解了快排的原理就是送分题了ovo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void swap(int a[], int i, int j)</div><div class="line">&#123;</div><div class="line">	int t = a[i];</div><div class="line">	a[i] = a[j];</div><div class="line">	a[j] = t;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int partition(int a[], int p, int r)//这个部分是对局部进行排序</div><div class="line">&#123;</div><div class="line">    int i = p;</div><div class="line">    int j = r + 1;</div><div class="line">    int x = a[p];</div><div class="line">    while(1)&#123;</div><div class="line">        while(i&lt;r &amp;&amp; a[++i]&lt;x);</div><div class="line">        while(a[--j]&gt;x);</div><div class="line">        if(i&gt;=j) break;</div><div class="line">        swap(a,i,j);</div><div class="line">    &#125;</div><div class="line">    //分析：进行了上面的排序后，还剩下一个位置没填，那就是参照数a[p]</div><div class="line">    //把a[p],a[j]互换，a[j]成为下一个参照数</div><div class="line">	swap(a,p,j);//------------&gt;填入的代码 </div><div class="line">    return j;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void quicksort(int a[], int p, int r)</div><div class="line">&#123;</div><div class="line">    if(p&lt;r)&#123;</div><div class="line">        int q = partition(a,p,r);</div><div class="line">        quicksort(a,p,q-1);</div><div class="line">        quicksort(a,q+1,r);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int i;</div><div class="line">	int a[] = &#123;5,13,6,24,2,8,19,27,6,12,1,17&#125;;</div><div class="line">	int N = 12;</div><div class="line">	</div><div class="line">	quicksort(a, 0, N-1);</div><div class="line">	</div><div class="line">	for(i=0; i&lt;N; i++) printf(&quot;%d &quot;, a[i]);</div><div class="line">	printf(&quot;\n&quot;);</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里mark一下我写的快排ovo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">void quick_sort(int *A,int x,int y)&#123;</div><div class="line">	if(x&lt;y)&#123;</div><div class="line">		int l=x,r=y,xx=A[x];</div><div class="line">		while(l&lt;r)&#123;</div><div class="line">			//从右往左找比xx小的数 </div><div class="line">			while(l&lt;r&amp;&amp;A[r]&gt;=xx) r--;</div><div class="line">			if(l&lt;r) A[l++]=A[r];//找到了，把找到的数填在空位上</div><div class="line">			//从左往右找比xx大的数</div><div class="line">			while(l&lt;r&amp;&amp;A[l]&lt;xx) l++;</div><div class="line">			if(l&lt;r) A[r--]=A[l]; </div><div class="line">		&#125;</div><div class="line">		A[l]=xx;//填入参考数（此时l=r) </div><div class="line">		quick_sort(A,x,y-1);</div><div class="line">		quick_sort(A,x+1,y);  </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h3><p>抽签</p>
+<p>X星球要派出一个5人组成的观察团前往W星。<br>其中：<br>A国最多可以派出4人。<br>B国最多可以派出2人。<br>C国最多可以派出2人。<br>….</p>
+<p>那么最终派往W星的观察团会有多少种国别的不同组合呢？</p>
+<p>下面的程序解决了这个问题。<br>数组a[] 中既是每个国家可以派出的最多的名额。<br>程序执行结果为：<br>DEFFF<br>CEFFF<br>CDFFF<br>CDEFF<br>CCFFF<br>CCEFF<br>CCDFF<br>CCDEF<br>BEFFF<br>BDFFF<br>BDEFF<br>BCFFF<br>BCEFF<br>BCDFF<br>BCDEF<br>….<br>(以下省略，总共101行)</p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>还是枚举，五个空试着填数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#define N 6</div><div class="line">#define M 5</div><div class="line">#define BUF 1024</div><div class="line"></div><div class="line">//分析:</div><div class="line">//这里的k表示当前国家，m是还需多少人，b是已经安排好的数组</div><div class="line">void f(int a[], int k, int m, char b[])</div><div class="line">&#123;</div><div class="line">	int i,j;</div><div class="line">	</div><div class="line">	if(k==N)&#123; </div><div class="line">		b[M] = 0;</div><div class="line">		if(m==0) printf(&quot;%s\n&quot;,b);</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	for(i=0; i&lt;=a[k]; i++)&#123;//试着填数//a[k]为每国限制的人数</div><div class="line">		for(j=0; j&lt;i; j++) b[M-m+j] = k+&apos;A&apos;;//枚举派该国去的所有情况 </div><div class="line">		//i为已经派的人数，所以，递归调用</div><div class="line">		f(a,k+1,m-i,b);  //填空位置</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;	</div><div class="line">	int  a[N] = &#123;4,2,2,1,1,3&#125;;</div><div class="line">	char b[BUF];</div><div class="line">	f(a,0,M,b);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/07/2016第七届蓝桥杯个人赛部分题解/">
+    <time datetime="2017-03-07T15:25:57.000Z" class="entry-date">
+        2017-03-07
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+  
     <article id="post-vs2015的工具箱不见了" class="post-vs2015的工具箱不见了 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +153,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/vs2015的工具箱不见了/" data-id="cj0ly8hed000tjwi7upql016u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/vs2015的工具箱不见了/" data-id="cj0lyjopw000u4ki7g8venhfy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -118,7 +195,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/05/20170305/" data-id="cj0ly8hcw0009jwi7s0rm3bjv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/05/20170305/" data-id="cj0lyjood000b4ki7s3ers16p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -160,7 +237,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/02/21/unity快捷键/" data-id="cj0ly8he5000qjwi7lvytf829" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/02/21/unity快捷键/" data-id="cj0lyjops000t4ki7b7q34cfi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -202,7 +279,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/01/15/排序算法/" data-id="cj0ly8hex0012jwi7mgoa2axd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/01/15/排序算法/" data-id="cj0lyjoqf00144ki7226yyj10" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -248,7 +325,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/01/01/about-me/" data-id="cj0ly8hdo000hjwi74k2xv0h2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/01/01/about-me/" data-id="cj0lyjop7000l4ki77jzzvzob" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -304,7 +381,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/12/30/javascript面向对象学习笔记/" data-id="cj0ly8he2000pjwi7dy6wou7g" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/12/30/javascript面向对象学习笔记/" data-id="cj0lyjopm000q4ki7xh26igz6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -354,7 +431,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/24/操作系统分区分配算法/" data-id="cj0ly8hf20013jwi70bhi282c" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/24/操作系统分区分配算法/" data-id="cj0lyjoqh00164ki70sw4s8qf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -401,7 +478,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/07/between-you-and-me/" data-id="cj0ly8hds000kjwi7bskeus1k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/07/between-you-and-me/" data-id="cj0lyjope000m4ki759ybccm3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -448,7 +525,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/04/C语言模拟时间片调度算法/" data-id="cj0ly8hdj000gjwi7gy4yrhbq" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/04/C语言模拟时间片调度算法/" data-id="cj0lyjoov000i4ki7bbv671o3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -469,53 +546,6 @@
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
   <a class="article-category-link" href="/categories/OS/">OS</a>
-  </div>
-
-    
-    </footer>
-</article>
-
-
-
-
-
-  
-    <article id="post-去掉字符串的所有标点符号和空格" class="post-去掉字符串的所有标点符号和空格 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2016/11/03/去掉字符串的所有标点符号和空格/">去掉字符串的所有标点符号和空格</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2016/11/03/去掉字符串的所有标点符号和空格/" data-id="cj0ly8hes0010jwi7yoj4acs4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line"> </div><div class="line">  str=str.replace(<span class="regexp">/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&amp;|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\&#123;|\&#125;|\;|\:|\"|\'|\,|\&lt;|\.|\&gt;|\/|\?]/g</span>,<span class="string">""</span>);<span class="comment">//去掉符号</span></div><div class="line">  str=str.replace(<span class="regexp">/\s+/g</span>);<span class="comment">//去掉空格</span></div><div class="line">  str=str.toLowerCase();</div><div class="line">  <span class="keyword">var</span> arry=str.split(<span class="string">""</span>);<span class="comment">//strring-&gt;array</span></div><div class="line">  arry=arry.reverse();</div><div class="line">  <span class="keyword">var</span> restr=arry.join(<span class="string">""</span>);<span class="comment">//array-&gt;string</span></div><div class="line">  <span class="keyword">if</span>(restr===str)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(aba);<span class="comment">//true;</span></div></pre></td></tr></table></figure>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2016/11/03/去掉字符串的所有标点符号和空格/">
-    <time datetime="2016-11-03T07:32:30.000Z" class="entry-date">
-        2016-11-03
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/js-正则表达式/">js 正则表达式</a>
   </div>
 
     
@@ -551,7 +581,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -567,6 +597,10 @@
           </li>
         
           <li>
+            <a href="/2017/03/22/20170322画画/">20170322画画</a>
+          </li>
+        
+          <li>
             <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
           </li>
         
@@ -576,10 +610,6 @@
         
           <li>
             <a href="/2017/03/20/hexo-插入图片/">hexo 插入图片</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/">2016第七届蓝桥杯个人赛部分解（三）</a>
           </li>
         
       </ul>
