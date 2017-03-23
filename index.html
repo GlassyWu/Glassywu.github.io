@@ -61,6 +61,85 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-2015第六届蓝桥杯部分解-一" class="post-2015第六届蓝桥杯部分解-一 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/03/23/2015第六届蓝桥杯部分解-一/">2015第六届蓝桥杯部分解(一</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/" data-id="cj0m663dg0000bsi7ohoplps5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>算法可能很辣鸡ovo<br>水平有限ovo<br>欢迎指正&gt; &lt;</p>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>奖券数目</p>
+<p>有些人很迷信数字，比如带“4”的数字，认为和“死”谐音，就觉得不吉利。<br>虽然这些说法纯属无稽之谈，但有时还要迎合大众的需求。某抽奖活动的奖券号码是5位数（10000-99999），要求其中不要出现带“4”的号码，主办单位请你计算一下，如果任何两张奖券不重号，最多可发出奖券多少张。</p>
+<p>请提交该数字（一个整数），不要写任何多余的内容或说明性文字。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>方法一:暴力枚举<br>方法二:高中的排列组合，第一个空不能填0、4所以一共8中可能，其他四位不能填4分别有9中可能，所有的组合一共8<em>9</em>9<em>9</em>9=52488</p>
+<p>代码形式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">1</span>;a&lt;=<span class="number">9</span>;a++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;=<span class="number">9</span>;b++)</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">0</span>;c&lt;=<span class="number">9</span>;c++)</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> d=<span class="number">0</span>;c&lt;=<span class="number">9</span>;d++)</div><div class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> e=<span class="number">0</span>;e&lt;=<span class="number">9</span>;e++)&#123;</div><div class="line">						<span class="keyword">if</span>(a==<span class="number">4</span>||b==<span class="number">4</span>||c==<span class="number">4</span>||d==<span class="number">4</span>||e==<span class="number">4</span>) <span class="keyword">continue</span>;</div><div class="line">						<span class="keyword">else</span> ans++;</div><div class="line">					&#125;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>星系炸弹</p>
+<p>在X星系的广袤空间中漂浮着许多X星人造“炸弹”，用来作为宇宙中的路标。<br>每个炸弹都可以设定多少天之后爆炸。<br>比如：阿尔法炸弹2015年1月1日放置，定时为15天，则它在2015年1月16日爆炸。<br>有一个贝塔炸弹，2014年11月9日放置，定时为1000天，请你计算它爆炸的准确日期。</p>
+<p>请填写该日期，格式为 yyyy-mm-dd  即4位年份2位月份2位日期。比如：2015-02-19<br>请严格按照格式书写。不能出现其它文字或符号。</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>用Excel:)</p>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>三羊献瑞</p>
+<p>观察下面的加法算式：</p>
+<pre><code>祥 瑞 生 辉
+</code></pre><h2 id="三-羊-献-瑞"><a href="#三-羊-献-瑞" class="headerlink" title="  +   三 羊 献 瑞"></a>  +   三 羊 献 瑞</h2><p>   三 羊 生 瑞 气</p>
+<p>(如果有对齐问题，可以参看【图1.jpg】)</p>
+<p>其中，相同的汉字代表相同的数字，不同的汉字代表不同的数字<br>请你填写“三羊献瑞”所代表的4位数字（答案唯一），不要填写任何多余内容</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>把上面的式子分别用字母表示，可以表示为:ABCD+EFGB=EFCBH，求EFGB<br>所以一共是8个空，每个空预备数是0 ~ 9（每个数的开头不能是0)<br>直接暴力解，偷懒用STL的next_permutation()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int num[10];</div><div class="line">	for(int i=0;i&lt;=9;i++)&#123;</div><div class="line">		num[i]=i;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	do&#123;</div><div class="line">		if(num[2]==0||num[6]==0) continue;//不能0开头 </div><div class="line">		int x=num[2]*1000+num[3]*100+num[4]*10+num[5];//ABCD</div><div class="line">		int y=num[6]*1000+num[7]*100+num[8]*10+num[3];//EFGB</div><div class="line">		int z=num[6]*10000+num[7]*1000+num[4]*100+num[3]*10+num[9];//EFCBH</div><div class="line">		if(x+y==z) cout&lt;&lt;num[6]&lt;&lt;num[7]&lt;&lt;num[8]&lt;&lt;num[3]&lt;&lt;endl;//EFGB</div><div class="line">	&#125;while(next_permutation(num,num+10));</div><div class="line">	</div><div class="line">	return 0;</div><div class="line">&#125; </div><div class="line">//output:1085</div></pre></td></tr></table></figure>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>格子中输出</p>
+<p>StringInGrid函数会在一个指定大小的格子中打印指定的字符串。<br>要求字符串在水平、垂直两个方向上都居中。<br>如果字符串太长，就截断。<br>如果不能恰好居中，可以稍稍偏左或者偏上一点。</p>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><p>水题<br>(“%*s”,a,b)的意思是(“%as”,b)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">void StringInGrid(int width, int height, const char* s)</div><div class="line">&#123;</div><div class="line">	int i,k;</div><div class="line">	char buf[1000];</div><div class="line">	strcpy(buf, s);</div><div class="line">	if(strlen(s)&gt;width-2) buf[width-2]=0;</div><div class="line">	</div><div class="line">	printf(&quot;+&quot;);</div><div class="line">	for(i=0;i&lt;width-2;i++) printf(&quot;-&quot;);</div><div class="line">	printf(&quot;+\n&quot;);</div><div class="line">	</div><div class="line">	for(k=1; k&lt;(height-1)/2;k++)&#123;</div><div class="line">		printf(&quot;|&quot;);</div><div class="line">		for(i=0;i&lt;width-2;i++) printf(&quot; &quot;);</div><div class="line">		printf(&quot;|\n&quot;);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	printf(&quot;|&quot;);</div><div class="line">	</div><div class="line">	printf(&quot;%*s%s%*s&quot;,(width-strlen(s)-2)/2,&quot;&quot;,buf,(width-strlen(s)-2)/2,&quot;&quot;);  //填空</div><div class="line">	          </div><div class="line">	printf(&quot;|\n&quot;);</div><div class="line">	</div><div class="line">	for(k=(height-1)/2+1; k&lt;height-1; k++)&#123;</div><div class="line">		printf(&quot;|&quot;);</div><div class="line">		for(i=0;i&lt;width-2;i++) printf(&quot; &quot;);</div><div class="line">		printf(&quot;|\n&quot;);</div><div class="line">	&#125;	</div><div class="line">	</div><div class="line">	printf(&quot;+&quot;);</div><div class="line">	for(i=0;i&lt;width-2;i++) printf(&quot;-&quot;);</div><div class="line">	printf(&quot;+\n&quot;);	</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	StringInGrid(20,6,&quot;abcd1234&quot;);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="第五题"><a href="#第五题" class="headerlink" title="第五题"></a>第五题</h3><p>九数组分数</p>
+<p>1,2,3…9 这九个数字组成一个分数，其值恰好为1/3，如何组法？</p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>水题:)<br>用的是全排列暴力</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void test(int x[])</div><div class="line">&#123;</div><div class="line">	int a = x[0]*1000 + x[1]*100 + x[2]*10 + x[3];</div><div class="line">	int b = x[4]*10000 + x[5]*1000 + x[6]*100 + x[7]*10 + x[8];</div><div class="line">	</div><div class="line">	if(a*3==b) printf(&quot;%d / %d\n&quot;, a, b);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void f(int x[], int k)</div><div class="line">&#123;</div><div class="line">	int i,t;</div><div class="line">	if(k&gt;=9)&#123;</div><div class="line">		test(x);</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	for(i=k; i&lt;9; i++)&#123;//对每个空进行枚举 </div><div class="line">		&#123;t=x[k]; x[k]=x[i]; x[i]=t;&#125;//试着填数 </div><div class="line">		f(x,k+1);//对下一个空进行填空</div><div class="line">		//所以下一步应该是回溯:) </div><div class="line">		&#123;t=x[k]; x[k]=x[i]; x[i]=t;&#125;// 填空处</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">	</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int x[] = &#123;1,2,3,4,5,6,7,8,9&#125;;</div><div class="line">	f(x,0);	</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h3><p>加法变乘法</p>
+<p>我们都知道：1+2+3+ … + 49 = 1225<br>现在要求你把其中两个不相邻的加号变成乘号，使得结果为2015</p>
+<p>比如：<br>1+2+3+…+10<em>11+12+…+27</em>28+29+…+49 = 2015<br>就是符合要求的答案。</p>
+<p>请你寻找另外一个可能的答案，并把位置靠前的那个乘号左边的数字提交（对于示例，就是提交10）。</p>
+<h3 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h3><p>只要分别枚举两个*的位置就好了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">49</span>;i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">2</span>;j&lt;<span class="number">49</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>((<span class="number">1225</span>-i-j-(i+<span class="number">1</span>)-(j+<span class="number">1</span>))==(<span class="number">2015</span>-i*(i+<span class="number">1</span>)-j*(j+<span class="number">1</span>)))<span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; </div><div class="line"><span class="comment">//output: 10 16</span></div><div class="line"><span class="comment">//ans： 16</span></div></pre></td></tr></table></figure>
+<h3 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h3><p>牌型种数</p>
+<p>小明被劫持到X赌城，被迫与其他3人玩牌。<br>一副扑克牌（去掉大小王牌，共52张），均匀发给4个人，每个人13张。<br>这时，小明脑子里突然冒出一个问题：<br>如果不考虑花色，只考虑点数，也不考虑自己得到的牌的先后顺序，自己手里能拿到的初始牌型组合一共有多少种呢？</p>
+<h3 id="分析-6"><a href="#分析-6" class="headerlink" title="分析"></a>分析</h3>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/23/2015第六届蓝桥杯部分解-一/">
+    <time datetime="2017-03-23T06:10:05.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+  
     <article id="post-2016第七届蓝桥杯个人赛部分解-五" class="post-2016第七届蓝桥杯个人赛部分解-五 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +155,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/" data-id="cj0lyjonc00034ki7ogciq5lf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/" data-id="cj0m663jl000hbsi7h9zzjc34" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -139,7 +218,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/22/20170322画画/" data-id="cj0lyjoop000g4ki7zn2ky9dr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/22/20170322画画/" data-id="cj0m663i7000dbsi771nxwowd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -186,7 +265,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/" data-id="cj0lyjonf00044ki7pyg1i8sd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/" data-id="cj0m663n1001gbsi7t2jiwdnk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -245,7 +324,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0lyjoog000d4ki77in8xvft" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0m663hu000bbsi7u4cqqomf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -292,7 +371,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0lyjopi000p4ki7isf3i9n8" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0m663jt000jbsi7cpwchvun" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -339,7 +418,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0lyjont00054ki71hfq4azf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0m663j5000gbsi7i01y069g" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -393,7 +472,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0lyjoq1000x4ki71lu1mxvj" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0m663kq000xbsi7ab4ycf76" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -440,7 +519,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0lyjonx00074ki7018zfezk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0m663hf0007bsi7hxm2s0h0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -494,7 +573,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0lyjoq3000y4ki7995qx14o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0m663kw0011bsi79assyisg" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -514,60 +593,6 @@
     <a href="/2017/03/11/分享音乐1-ovo/">
     <time datetime="2017-03-11T04:23:53.000Z" class="entry-date">
         2017-03-11
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/music/">music</a>
-  </div>
-
-    
-    </footer>
-</article>
-
-
-
-
-
-  
-    <article id="post-分享音乐ovo" class="post-分享音乐ovo post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/03/09/分享音乐ovo/">分享音乐ovo</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/09/分享音乐ovo/" data-id="cj0lyjoq900104ki7syjrv97q" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>我算是个重度音乐爱好者吧ovo，然而最想分享我喜欢的音乐的那个人，因为某些原因，不想再联<br>系，那么就po到这里吧ovo</p>
-<h4 id="心情低落的时候可以听这首呀-超级燃"><a href="#心情低落的时候可以听这首呀-超级燃" class="headerlink" title="心情低落的时候可以听这首呀:)超级燃~"></a>心情低落的时候可以听这首呀:)超级燃~</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=26669103&auto=0&height=66"></iframe>
-
-<h4 id="这个小姐姐的翻唱超级棒呢ovo-好美的声线，嗯，适合晚上独处或者写代码听"><a href="#这个小姐姐的翻唱超级棒呢ovo-好美的声线，嗯，适合晚上独处或者写代码听" class="headerlink" title="这个小姐姐的翻唱超级棒呢ovo,好美的声线，嗯，适合晚上独处或者写代码听"></a>这个小姐姐的翻唱超级棒呢ovo,好美的声线，嗯，适合晚上独处或者写代码听</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450795499&auto=0&height=66"></iframe>
-
-<h4 id="这首歌蜜汁带感ovo-可以带入自己的情绪到里面，即如果你心情不好，这首歌就是绝望，如果心情好，那是一首很cool的歌"><a href="#这首歌蜜汁带感ovo-可以带入自己的情绪到里面，即如果你心情不好，这首歌就是绝望，如果心情好，那是一首很cool的歌" class="headerlink" title="这首歌蜜汁带感ovo,可以带入自己的情绪到里面，即如果你心情不好，这首歌就是绝望，如果心情好，那是一首很cool的歌"></a>这首歌蜜汁带感ovo,可以带入自己的情绪到里面，即如果你心情不好，这首歌就是绝望，如果心情好，那是一首很cool的歌</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=432698627&auto=0&height=66"></iframe>
-
-
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/03/09/分享音乐ovo/">
-    <time datetime="2017-03-09T12:54:56.000Z" class="entry-date">
-        2017-03-09
     </time>
 </a>
     
@@ -609,7 +634,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -619,6 +644,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2017/03/23/2015第六届蓝桥杯部分解-一/">2015第六届蓝桥杯部分解(一</a>
+          </li>
         
           <li>
             <a href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">2016第七届蓝桥杯个人赛部分解(五)</a>
@@ -634,10 +663,6 @@
         
           <li>
             <a href="/2017/03/21/20170320画/">20170320画</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/20/hexo-插入图片/">hexo 插入图片</a>
           </li>
         
       </ul>
