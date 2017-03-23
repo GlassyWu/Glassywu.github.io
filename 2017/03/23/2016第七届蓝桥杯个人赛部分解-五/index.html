@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
+第九题交换瓶子
+有N个瓶子，编号 1 ~ N，放在架子上。
+比如有5个瓶子：2 1 3 5 4
+要求每次拿起2个瓶子，交换它们的位置。经过若干次后，使得瓶子的序号为：1 2 3 4 5
+对于这么简单的情况，显然，至少需要交换2次就可以复位" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>2016第七届蓝桥杯个人赛部分解(五) | glassy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
+第九题交换瓶子
+有N个瓶子，编号 1 ~ N，放在架子上。
+比如有5个瓶子：2 1 3 5 4
+要求每次拿起2个瓶子，交换它们的位置。经过若干次后，使得瓶子的序号为：1 2 3 4 5
+对于这么简单的情况，显然，至少需要交换2次就可以复位。
+如果瓶子更多呢？你可以通过编程来解决。
+输入格式为两行：第一行: 一个正整数N（N&amp;lt;100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016第七届蓝桥杯个人赛部分解(五)">
+<meta property="og:url" content="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/index.html">
+<meta property="og:site_name" content="glassy">
+<meta property="og:description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
+第九题交换瓶子
+有N个瓶子，编号 1 ~ N，放在架子上。
+比如有5个瓶子：2 1 3 5 4
+要求每次拿起2个瓶子，交换它们的位置。经过若干次后，使得瓶子的序号为：1 2 3 4 5
+对于这么简单的情况，显然，至少需要交换2次就可以复位。
+如果瓶子更多呢？你可以通过编程来解决。
+输入格式为两行：第一行: 一个正整数N（N&amp;lt;100">
+<meta property="og:updated_time" content="2017-03-23T05:19:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016第七届蓝桥杯个人赛部分解(五)">
+<meta name="twitter:description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
+第九题交换瓶子
+有N个瓶子，编号 1 ~ N，放在架子上。
+比如有5个瓶子：2 1 3 5 4
+要求每次拿起2个瓶子，交换它们的位置。经过若干次后，使得瓶子的序号为：1 2 3 4 5
+对于这么简单的情况，显然，至少需要交换2次就可以复位。
+如果瓶子更多呢？你可以通过编程来解决。
+输入格式为两行：第一行: 一个正整数N（N&amp;lt;100">
+  
+  
+    <link rel="icon" href="favicon1.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="glassy" rel="home">glassy</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">glassy</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-2016第七届蓝桥杯个人赛部分解-五" class="post-2016第七届蓝桥杯个人赛部分解-五 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      2016第七届蓝桥杯个人赛部分解(五)
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/" data-id="cj0ly8hbr0001jwi7s048auw0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>算法可能很辣鸡ovo<br>水平有限ovo<br>欢迎指正&gt; &lt;</p>
+<h3 id="第九题"><a href="#第九题" class="headerlink" title="第九题"></a>第九题</h3><p>交换瓶子</p>
+<p>有N个瓶子，编号 1 ~ N，放在架子上。</p>
+<p>比如有5个瓶子：<br>2 1 3 5 4</p>
+<p>要求每次拿起2个瓶子，交换它们的位置。<br>经过若干次后，使得瓶子的序号为：<br>1 2 3 4 5</p>
+<p>对于这么简单的情况，显然，至少需要交换2次就可以复位。</p>
+<p>如果瓶子更多呢？你可以通过编程来解决。</p>
+<p>输入格式为两行：<br>第一行: 一个正整数N（N&lt;10000）, 表示瓶子的数目<br>第二行：N个正整数，用空格分开，表示瓶子目前的排列情况。</p>
+<p>输出数据为一行一个正整数，表示至少交换多少次，才能完成排序。</p>
+<p>例如，输入：<br>5<br>3 1 2 5 4</p>
+<p>程序应该输出：<br>3</p>
+<p>再例如，输入：<br>5<br>5 4 3 2 1</p>
+<p>程序应该输出：<br>2</p>
+<p>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗  &lt; 1000ms</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>贪心算法<br>假设一个瓶子的坐标分别用i,j来表示，i为放置地方的格子数，j为瓶子的编号<br>那么这里用A[]来表示j,用index[]来表示i<br>遍历A,只要遇到了A[i]!=i(即没有摆放正确),就把相应的瓶子放到对应的格子，使A[i]=i</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int A[10001];</div><div class="line">int index[10001];</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int n;</div><div class="line">	cin&gt;&gt;n;</div><div class="line">	int ans=0; </div><div class="line">	</div><div class="line">	for(int i=1;i&lt;=n;i++) cin&gt;&gt;A[i];</div><div class="line">	for(int i=1;i&lt;=n;i++) index[A[i]]=i;//记录编号为A[i]的位置i</div><div class="line">	for(int i=1;i&lt;=n;i++)&#123;</div><div class="line">		if(A[i]!=i)&#123;</div><div class="line">			//贪心算法，把元素放到它应该在的位置</div><div class="line">			 int a=A[i];</div><div class="line">			 int&amp; b=index[i];</div><div class="line">			 int tmp=A[i];</div><div class="line">			 A[i]=A[b];</div><div class="line">			 A[b]=tmp;</div><div class="line">			 </div><div class="line">			 //更新index</div><div class="line">			  index[a]=index[i];</div><div class="line">			  index[i]=i;</div><div class="line">			  ans++;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	cout&lt;&lt;ans&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ps:并没有提交到oj，不知道会不会炸orz</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">
+    <time datetime="2017-03-23T05:10:29.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-2016第七届蓝桥杯个人赛部分解-五" data-title="2016第七届蓝桥杯个人赛部分解(五)" data-url="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'glassywu'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">2016第七届蓝桥杯个人赛部分解(五)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/21/20170320画/">20170320画</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/hexo-插入图片/">hexo 插入图片</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/">2016第七届蓝桥杯个人赛部分解（三）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 glassy
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    <span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span id="busuanzi_container_site_uv">
+    访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

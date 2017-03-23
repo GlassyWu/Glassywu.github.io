@@ -61,6 +61,69 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-2016第七届蓝桥杯个人赛部分解-五" class="post-2016第七届蓝桥杯个人赛部分解-五 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">2016第七届蓝桥杯个人赛部分解(五)</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/" data-id="cj0ly8hbr0001jwi7s048auw0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>算法可能很辣鸡ovo<br>水平有限ovo<br>欢迎指正&gt; &lt;</p>
+<h3 id="第九题"><a href="#第九题" class="headerlink" title="第九题"></a>第九题</h3><p>交换瓶子</p>
+<p>有N个瓶子，编号 1 ~ N，放在架子上。</p>
+<p>比如有5个瓶子：<br>2 1 3 5 4</p>
+<p>要求每次拿起2个瓶子，交换它们的位置。<br>经过若干次后，使得瓶子的序号为：<br>1 2 3 4 5</p>
+<p>对于这么简单的情况，显然，至少需要交换2次就可以复位。</p>
+<p>如果瓶子更多呢？你可以通过编程来解决。</p>
+<p>输入格式为两行：<br>第一行: 一个正整数N（N&lt;10000）, 表示瓶子的数目<br>第二行：N个正整数，用空格分开，表示瓶子目前的排列情况。</p>
+<p>输出数据为一行一个正整数，表示至少交换多少次，才能完成排序。</p>
+<p>例如，输入：<br>5<br>3 1 2 5 4</p>
+<p>程序应该输出：<br>3</p>
+<p>再例如，输入：<br>5<br>5 4 3 2 1</p>
+<p>程序应该输出：<br>2</p>
+<p>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗  &lt; 1000ms</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>贪心算法<br>假设一个瓶子的坐标分别用i,j来表示，i为放置地方的格子数，j为瓶子的编号<br>那么这里用A[]来表示j,用index[]来表示i<br>遍历A,只要遇到了A[i]!=i(即没有摆放正确),就把相应的瓶子放到对应的格子，使A[i]=i</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line"></div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int A[10001];</div><div class="line">int index[10001];</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int n;</div><div class="line">	cin&gt;&gt;n;</div><div class="line">	int ans=0; </div><div class="line">	</div><div class="line">	for(int i=1;i&lt;=n;i++) cin&gt;&gt;A[i];</div><div class="line">	for(int i=1;i&lt;=n;i++) index[A[i]]=i;//记录编号为A[i]的位置i</div><div class="line">	for(int i=1;i&lt;=n;i++)&#123;</div><div class="line">		if(A[i]!=i)&#123;</div><div class="line">			//贪心算法，把元素放到它应该在的位置</div><div class="line">			 int a=A[i];</div><div class="line">			 int&amp; b=index[i];</div><div class="line">			 int tmp=A[i];</div><div class="line">			 A[i]=A[b];</div><div class="line">			 A[b]=tmp;</div><div class="line">			 </div><div class="line">			 //更新index</div><div class="line">			  index[a]=index[i];</div><div class="line">			  index[i]=i;</div><div class="line">			  ans++;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	cout&lt;&lt;ans&lt;&lt;endl;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ps:并没有提交到oj，不知道会不会炸orz</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">
+    <time datetime="2017-03-23T05:10:29.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+  
     <article id="post-2016第七届蓝桥杯个人赛部分解-四）" class="post-2016第七届蓝桥杯个人赛部分解-四） post type-post status-publish format-standard hentry">
     <!---->
 
@@ -76,7 +139,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/" data-id="cj0jmtzua0003sci7toavw1mv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/" data-id="cj0ly8hce0004jwi7ve934lqt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -135,7 +198,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0jmtzva000bsci70a23wkwt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/21/20170320画/" data-id="cj0ly8hd7000bjwi7adw9n9gb" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -182,7 +245,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0jmtzvu000ksci7ueut1csw" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/hexo-插入图片/" data-id="cj0ly8hdy000mjwi78n5if1vu" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -229,7 +292,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0jmtzuq0004sci7spwqx2r6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/" data-id="cj0ly8hcr0007jwi7b4d5izkk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -283,7 +346,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0jmtzwa000tsci7p2if3mi9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/13/分享音乐2/" data-id="cj0ly8hei000wjwi76oqzm2g7" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -330,7 +393,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0jmtzuv0007sci7dl5zzjvl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/2016第七届蓝桥杯个人赛部分解（二）/" data-id="cj0ly8hcl0005jwi70xlo1ll0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -384,7 +447,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0jmtzw7000ssci7ro0l3pi0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/11/分享音乐1-ovo/" data-id="cj0ly8heg000ujwi77wf36tis" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -436,7 +499,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/09/分享音乐ovo/" data-id="cj0jmtzwb000vsci7s3dingqw" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/09/分享音乐ovo/" data-id="cj0ly8hen000yjwi701eeem9h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -490,7 +553,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/2016第七届蓝桥杯个人赛部分题解/" data-id="cj0jmtzut0005sci73dl0fjji" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/2016第七届蓝桥杯个人赛部分题解/" data-id="cj0ly8hdf000djwi79rd0qffk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -552,48 +615,6 @@
 
 
   
-    <article id="post-vs2015的工具箱不见了" class="post-vs2015的工具箱不见了 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2017/03/07/vs2015的工具箱不见了/">vs2015的工具箱不见了</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/07/vs2015的工具箱不见了/" data-id="cj0jmtzw4000psci7yhg0i7iv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>快捷键: Ctrl+Alt+X</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2017/03/07/vs2015的工具箱不见了/">
-    <time datetime="2017-03-07T13:44:30.000Z" class="entry-date">
-        2017-03-07
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -618,7 +639,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -628,6 +649,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget-content">
       <ul>
+        
+          <li>
+            <a href="/2017/03/23/2016第七届蓝桥杯个人赛部分解-五/">2016第七届蓝桥杯个人赛部分解(五)</a>
+          </li>
         
           <li>
             <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
@@ -643,10 +668,6 @@
         
           <li>
             <a href="/2017/03/20/2016第七届蓝桥杯个人赛部分解（三）/">2016第七届蓝桥杯个人赛部分解（三）</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/13/分享音乐2/">分享音乐2</a>
           </li>
         
       </ul>
