@@ -15,23 +15,23 @@
   
   
   
-  <title>2015第六届蓝桥杯部分解(一 | glassy</title>
+  <title>2015第六届蓝桥杯部分解一 | glassy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
 第一题奖券数目
 有些人很迷信数字，比如带“4”的数字，认为和“死”谐音，就觉得不吉利。虽然这些说法纯属无稽之谈，但有时还要迎合大众的需求。某抽奖活动的奖券号码是5位数（10000-99999），要求其中不要出现带“4”的号码，主办单位请你计算一下，如果任何两张奖券不重号，最多可发出奖券多少张。
 请提交该数字（一个整数），不要写任何多余的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2015第六届蓝桥杯部分解(一">
+<meta property="og:title" content="2015第六届蓝桥杯部分解一">
 <meta property="og:url" content="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/index.html">
 <meta property="og:site_name" content="glassy">
 <meta property="og:description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
 第一题奖券数目
 有些人很迷信数字，比如带“4”的数字，认为和“死”谐音，就觉得不吉利。虽然这些说法纯属无稽之谈，但有时还要迎合大众的需求。某抽奖活动的奖券号码是5位数（10000-99999），要求其中不要出现带“4”的号码，主办单位请你计算一下，如果任何两张奖券不重号，最多可发出奖券多少张。
 请提交该数字（一个整数），不要写任何多余的">
-<meta property="og:updated_time" content="2017-03-23T09:01:49.000Z">
+<meta property="og:updated_time" content="2017-03-30T02:38:33.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2015第六届蓝桥杯部分解(一">
+<meta name="twitter:title" content="2015第六届蓝桥杯部分解一">
 <meta name="twitter:description" content="算法可能很辣鸡ovo水平有限ovo欢迎指正&amp;gt; &amp;lt;
 第一题奖券数目
 有些人很迷信数字，比如带“4”的数字，认为和“死”谐音，就觉得不吉利。虽然这些说法纯属无稽之谈，但有时还要迎合大众的需求。某抽奖活动的奖券号码是5位数（10000-99999），要求其中不要出现带“4”的号码，主办单位请你计算一下，如果任何两张奖券不重号，最多可发出奖券多少张。
@@ -84,14 +84,14 @@
         
   
     <h1 class="entry-title article-title">
-      2015第六届蓝桥杯部分解(一
+      2015第六届蓝桥杯部分解一
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/" data-id="cj0m663dg0000bsi7ohoplps5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/" data-id="cj0vt8osm0001zwi7y5b5pd5o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -128,9 +128,7 @@
 <p>请你寻找另外一个可能的答案，并把位置靠前的那个乘号左边的数字提交（对于示例，就是提交10）。</p>
 <h3 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h3><p>只要分别枚举两个*的位置就好了</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">49</span>;i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">2</span>;j&lt;<span class="number">49</span>;j++)&#123;</div><div class="line">			<span class="keyword">if</span>((<span class="number">1225</span>-i-j-(i+<span class="number">1</span>)-(j+<span class="number">1</span>))==(<span class="number">2015</span>-i*(i+<span class="number">1</span>)-j*(j+<span class="number">1</span>)))<span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125; </div><div class="line"><span class="comment">//output: 10 16</span></div><div class="line"><span class="comment">//ans： 16</span></div></pre></td></tr></table></figure>
-<h3 id="第七题"><a href="#第七题" class="headerlink" title="第七题"></a>第七题</h3><p>牌型种数</p>
-<p>小明被劫持到X赌城，被迫与其他3人玩牌。<br>一副扑克牌（去掉大小王牌，共52张），均匀发给4个人，每个人13张。<br>这时，小明脑子里突然冒出一个问题：<br>如果不考虑花色，只考虑点数，也不考虑自己得到的牌的先后顺序，自己手里能拿到的初始牌型组合一共有多少种呢？</p>
-<h3 id="分析-6"><a href="#分析-6" class="headerlink" title="分析"></a>分析</h3>
+
       
     </div><!-- .entry-content -->
 
@@ -153,7 +151,7 @@
 
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-2015第六届蓝桥杯部分解-一" data-title="2015第六届蓝桥杯部分解(一" data-url="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/"></div>
+    <div class="ds-thread" data-thread-key="post-2015第六届蓝桥杯部分解-一" data-title="2015第六届蓝桥杯部分解一" data-url="http://Glassywu.github.io/2017/03/23/2015第六届蓝桥杯部分解-一/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -188,7 +186,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/about-me/">about me</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js-正则表达式/">js 正则表达式</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/music/">music</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/一些小技能/">一些小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/画画/">画画</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -200,7 +198,11 @@
       <ul>
         
           <li>
-            <a href="/2017/03/23/2015第六届蓝桥杯部分解-一/">2015第六届蓝桥杯部分解(一</a>
+            <a href="/2017/03/30/2015第六届蓝桥杯部分解二/">2015第六届蓝桥杯部分解二</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/23/2015第六届蓝桥杯部分解-一/">2015第六届蓝桥杯部分解一</a>
           </li>
         
           <li>
@@ -213,10 +215,6 @@
         
           <li>
             <a href="/2017/03/21/2016第七届蓝桥杯个人赛部分解-四）/">2016第七届蓝桥杯个人赛部分解(四）</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/21/20170320画/">20170320画</a>
           </li>
         
       </ul>
