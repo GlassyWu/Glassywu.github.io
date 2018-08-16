@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glassywu.github.io/"/>
-  <updated>2018-08-16T06:04:36.718Z</updated>
+  <updated>2018-08-16T06:07:48.005Z</updated>
   <id>https://glassywu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://glassywu.github.io/2018/08/16/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E6%81%A2%E5%A4%8Dhexo/"/>
     <id>https://glassywu.github.io/2018/08/16/重装系统后恢复hexo/</id>
     <published>2018-08-16T02:38:15.000Z</published>
-    <updated>2018-08-16T06:04:36.718Z</updated>
+    <updated>2018-08-16T06:07:48.005Z</updated>
     
     <content type="html"><![CDATA[<h3 id="适用情况："><a href="#适用情况：" class="headerlink" title="适用情况："></a>适用情况：</h3><ul><li>重装了系统/换台电脑</li><li>保存了原来部署的hexo文件  </li></ul><p>原来的部署文件如下图：<br><img src="/2018/08/16/重装系统后恢复hexo/hexo1.jpg" title="重装系统后恢复hexo"></p><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol><li>安装git<ul><li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git下载</a></li></ul></li><li><p>配置SSH key</p><ul><li>在”C:\Users\username”下运行git bash</li><li><p>运行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxxx(你的email) # 一直enter</span><br></pre></td></tr></table></figure></li><li><p>结束后会看到目录生成了.ssh文件</p></li><li>在github添加新的SSH key</li><li>Settings -&gt; SSH and GPG keys -&gt; new SSH key</li><li>在Key文本框里粘贴公钥id_rsa.pub文件的内容(注意后缀！这是公钥)</li><li>最后点击Add SSH Key</li></ul></li><li><p>安装Nodejs</p><ul><li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Nodejs下载</a></li></ul></li><li>安装hexo<ul><li>打开git bash,运行如下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></li></ul></li></ol><h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><ol><li>复制以下文件到新的目录</li></ol><img src="/2018/08/16/重装系统后恢复hexo/hexo2.jpg" title="重装系统后恢复hexo"> <p>(ps：其中蓝色框文件为.gitignore文件,如果没看到可以查看隐藏文件)</p><ol start="2"><li>在新拷贝的文件夹中打开git bash,运行以下命令： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install # 安装模块</span><br></pre></td></tr></table></figure></li></ol><p>(ps:不要用hexo init 命令，这个命令会重置站点的配置文件_config.yml的内容:p)</p><ol start="3"><li><p>安装其他插件：</p><ul><li><p>部署到git的插件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li><li><p>others…</p></li></ul></li><li><p>生成和部署：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li><li><p>预览:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>在<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>查看效果</p><p>hexo 部署文件最后如图所示：</p><img src="/2018/08/16/重装系统后恢复hexo/hexo3.jpg" title="重装系统后恢复hexo">  <center>—end—</center></li></ol>]]></content>
     
