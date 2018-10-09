@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glassywu.github.io/"/>
-  <updated>2018-08-16T06:07:48.005Z</updated>
+  <updated>2018-10-09T13:52:21.711Z</updated>
   <id>https://glassywu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启动集群后Slave无法启动DataNode进程</title>
+    <link href="https://glassywu.github.io/2018/10/09/%E5%90%AF%E5%8A%A8%E9%9B%86%E7%BE%A4%E5%90%8ESlave%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8DataNode%E8%BF%9B%E7%A8%8B/"/>
+    <id>https://glassywu.github.io/2018/10/09/启动集群后Slave无法启动DataNode进程/</id>
+    <published>2018-10-09T13:19:58.000Z</published>
+    <updated>2018-10-09T13:52:21.711Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>执行start-all.sh后，slave进程中没有DataNode</p><h4 id="二、问题查看"><a href="#二、问题查看" class="headerlink" title="二、问题查看"></a>二、问题查看</h4><p>去Slave的/hadoop/logs文件查看日志，信息如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/报错信息.jpg" title="启动集群后Slave无法启动DataNode进程"></p><p>表明：造成无法启动DataNode进程的原因是namenode的clusterID和datanode的clusterID不匹配，一般造成这种问题的原因是多次执行了namenode格式化命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenode -format</span><br></pre></td></tr></table></figure></p><p>ok,直接分别去查看响应的文件是否真的如此：</p><h6 id="1-查看slave："><a href="#1-查看slave：" class="headerlink" title="1.查看slave："></a>1.查看slave：</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/slave截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/slave-version.jpg" title="启动集群后Slave无法启动DataNode进程"><h6 id="2-查看master"><a href="#2-查看master" class="headerlink" title="2.查看master:"></a>2.查看master:</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/master截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/master-version.jpg" title="启动集群后Slave无法启动DataNode进程"><p><strong>ps:对比红色线框内容即可，图中为已修改完成的结果，二者一致即可！</strong></p><h4 id="三、结果"><a href="#三、结果" class="headerlink" title="三、结果"></a>三、结果</h4><p>重新执行start-all.sh命令，然后在slave执行jps，结果如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/结果.jpg" title="启动集群后Slave无法启动DataNode进程"></p><p>恢复正常:)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;一、问题描述&quot;&gt;&lt;a href=&quot;#一、问题描述&quot; class=&quot;headerlink&quot; title=&quot;一、问题描述&quot;&gt;&lt;/a&gt;一、问题描述&lt;/h4&gt;&lt;p&gt;执行start-all.sh后，slave进程中没有DataNode&lt;/p&gt;
+&lt;h4 id=&quot;二、问题查看&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="hadoop" scheme="https://glassywu.github.io/tags/hadoop/"/>
+    
+  </entry>
   
   <entry>
     <title>重装系统后恢复hexo</title>
