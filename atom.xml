@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glassywu.github.io/"/>
-  <updated>2018-10-09T13:52:21.711Z</updated>
+  <updated>2018-12-10T11:46:40.887Z</updated>
   <id>https://glassywu.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非Root用户无法显示jps结果</title>
+    <link href="https://glassywu.github.io/2018/12/10/%E9%9D%9ERoot%E7%94%A8%E6%88%B7%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BAjps%E7%BB%93%E6%9E%9C/"/>
+    <id>https://glassywu.github.io/2018/12/10/非Root用户无法显示jps结果/</id>
+    <published>2018-12-10T11:45:53.000Z</published>
+    <updated>2018-12-10T11:46:40.887Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>非root用户执行jps命令时不显示结果，如图：<br><img src="/2018/12/10/非Root用户无法显示jps结果/1.jpg" title="非Root用户无法显示jps结果"></p><h4 id="二、原因分析"><a href="#二、原因分析" class="headerlink" title="二、原因分析"></a>二、原因分析</h4><p>jps需要在tmp下创建一个hsperfdata_username的目录，用来存放进程的ip，所以检查一下/tmp/hsperfdata_username是否存在，如果不存在则自己创建一个，然后再检查权限。<br><img src="/2018/12/10/非Root用户无法显示jps结果/2.jpg" title="非Root用户无法显示jps结果"></p><p>可以看出无法显示的原因是权限。</p><h4 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h4><p>修改文件权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R hadoop.hadoop /tmp/hsperfdata_hadoop</span><br></pre></td></tr></table></figure></p><img src="/2018/12/10/非Root用户无法显示jps结果/3.jpg" title="非Root用户无法显示jps结果"><h4 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h4><img src="/2018/12/10/非Root用户无法显示jps结果/4.jpg" title="非Root用户无法显示jps结果">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;一、问题描述&quot;&gt;&lt;a href=&quot;#一、问题描述&quot; class=&quot;headerlink&quot; title=&quot;一、问题描述&quot;&gt;&lt;/a&gt;一、问题描述&lt;/h4&gt;&lt;p&gt;非root用户执行jps命令时不显示结果，如图：&lt;br&gt;&lt;img src=&quot;/2018/12/10/非Roo
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>启动集群后Slave无法启动DataNode进程</title>
