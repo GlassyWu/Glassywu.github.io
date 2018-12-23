@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://glassywu.github.io/2018/04/05/hello-world/</loc>
+    
+    <lastmod>2018-12-23T10:52:15.570Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://glassywu.github.io/2018/12/10/%E9%9D%9ERoot%E7%94%A8%E6%88%B7%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BAjps%E7%BB%93%E6%9E%9C/</loc>
     
     <lastmod>2018-12-23T10:32:17.421Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://glassywu.github.io/categories/index.html</loc>
     
     <lastmod>2018-04-05T13:11:19.393Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://glassywu.github.io/2018/04/05/hello-world/</loc>
-    
-    <lastmod>2018-04-05T12:55:20.983Z</lastmod>
     
   </url>
   
