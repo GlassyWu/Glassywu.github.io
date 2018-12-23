@@ -11,7 +11,7 @@
 
     <title>
         
-        非Root用户无法显示jps结果 - glassy&#39;s Blog
+        glassy&#39;s Blog
         
     </title>
 
@@ -65,7 +65,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -87,10 +87,6 @@
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、问题描述"><span class="toc-text">一、问题描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、原因分析"><span class="toc-text">二、原因分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、解决方案"><span class="toc-text">三、解决方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、效果"><span class="toc-text">四、效果</span></a></li></ol>
-</div>
     
 </div>
 
@@ -117,42 +113,80 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        非Root用户无法显示jps结果
-    </div>
+<!-- 归档列表 -->
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2018-12-10 19:45:53</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>非root用户执行jps命令时不显示结果，如图：<br><img src="/2018/12/10/非Root用户无法显示jps结果/1.jpg" title="非Root用户无法显示jps结果"></p>
-<h4 id="二、原因分析"><a href="#二、原因分析" class="headerlink" title="二、原因分析"></a>二、原因分析</h4><p>jps需要在tmp下创建一个hsperfdata_username的目录，用来存放进程的ip，所以检查一下/tmp/hsperfdata_username是否存在，如果不存在则自己创建一个，然后再检查权限。<br><img src="/2018/12/10/非Root用户无法显示jps结果/2.jpg" title="非Root用户无法显示jps结果"></p>
-<p>可以看出无法显示的原因是权限。</p>
-<h4 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h4><p>修改文件权限：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R hadoop<span class="selector-class">.hadoop</span> /tmp/hsperfdata_hadoop</span><br></pre></td></tr></table></figure></p>
-<img src="/2018/12/10/非Root用户无法显示jps结果/3.jpg" title="非Root用户无法显示jps结果">
-<h4 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h4><img src="/2018/12/10/非Root用户无法显示jps结果/4.jpg" title="非Root用户无法显示jps结果">
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+<div class="archives-container">
 
-        <div id="lv-container">
-        </div>
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
+                    <span class="tag-text">2018</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>12-10</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/12/10/非Root用户无法显示jps结果/">
+                        <span>
+                            非Root用户无法显示jps结果
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>10-09</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/10/09/启动集群后Slave无法启动DataNode进程/">
+                        <span>
+                            启动集群后Slave无法启动DataNode进程
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>08-16</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/08/16/重装系统后恢复hexo/">
+                        <span>
+                            重装系统后恢复hexo
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2018/04/05/hello-world/">
+                        <span>
+                            hello world
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
 
-    </div>
+    </ul>
+</div>
+
 </div>
     </div>
 </div>
@@ -211,7 +245,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
