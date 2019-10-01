@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glassywu.github.io/"/>
-  <updated>2019-10-01T12:55:34.904Z</updated>
+  <updated>2019-10-01T12:58:01.847Z</updated>
   <id>https://glassywu.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://glassywu.github.io/2019/10/01/2019-cvpr-and-iccv/"/>
     <id>https://glassywu.github.io/2019/10/01/2019-cvpr-and-iccv/</id>
     <published>2019-10-01T12:52:57.000Z</published>
-    <updated>2019-10-01T12:55:34.904Z</updated>
+    <updated>2019-10-01T12:58:01.847Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="CVPR-2019-dehaze"><a href="#CVPR-2019-dehaze" class="headerlink" title="CVPR 2019 - dehaze"></a>CVPR 2019 - dehaze</h1><p>1、<a href="https://arxiv.org/pdf/1903.08817.pdf" target="_blank" rel="noopener">Dual Residual Networks Leveraging the Potential of Paired Operations for Image Restoration</a></p><p>作者：Xing Liu， Masanori Suganuma， Zhun Sun，Takayuki Okatani，Graduate School of Information Sciences, Tohoku University</p><p>2、<a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Qu_Enhanced_Pix2pix_Dehazing_Network_CVPR_2019_paper.pdf" target="_blank" rel="noopener">Enhanced Pix2pix Dehazing Network</a></p><p>作者：Yanyun Qu (XMU)*; Yizi Chen (XMU); Jingying Huang (XMU); Yuan Xie (East China Normal University)</p><p>3、<a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Qu_Enhanced_Pix2pix_Dehazing_Network_CVPR_2019_paper.pdf" target="_blank" rel="noopener">PMS-Net: Robust Haze Removal Based on Patch Map for Singe Images</a></p><p>作者：Wei-Ting Chen (National Taiwan University)*; Jian-Jiun Ding (Nil); Sy-Yen Kuo (National Taiwan University)</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="CVPR-2019-dehaze"><a href="#CVPR-2019-dehaze" class="headerlink" title="CVPR 2019 - dehaze"></a>CVPR 2019 - dehaze</h1><p>1、<a href="https://arxiv.org/pdf/1903.08817.pdf" target="_blank" rel="noopener">Dual Residual Networks Leveraging the Potential of Paired Operations for Image Restoration</a></p><p>作者：Xing Liu， Masanori Suganuma， Zhun Sun，Takayuki Okatani，Graduate School of Information Sciences, Tohoku University</p><p>2、<a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Qu_Enhanced_Pix2pix_Dehazing_Network_CVPR_2019_paper.pdf" target="_blank" rel="noopener">Enhanced Pix2pix Dehazing Network</a></p><p>作者：Yanyun Qu (XMU)*; Yizi Chen (XMU); Jingying Huang (XMU); Yuan Xie (East China Normal University)</p><p>3、<a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Qu_Enhanced_Pix2pix_Dehazing_Network_CVPR_2019_paper.pdf" target="_blank" rel="noopener">PMS-Net: Robust Haze Removal Based on Patch Map for Singe Images</a></p><p>作者：Wei-Ting Chen (National Taiwan University)*; Jian-Jiun Ding (Nil); Sy-Yen Kuo (National Taiwan University)</p><p>#test latex<br>$$<br>X_{i}<br>$$</p>]]></content>
     
     <summary type="html">
     
