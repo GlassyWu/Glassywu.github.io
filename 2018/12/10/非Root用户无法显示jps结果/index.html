@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="glassy&#39;s blog">
-    <meta name="keyword"  content="233">
+    <meta name="keyword" content="233">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -137,12 +137,12 @@
 </span>
     </div>
     <div class="post-content ">
-        <h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>非root用户执行jps命令时不显示结果，如图：<br><img src="/2018/12/10/非Root用户无法显示jps结果/1.jpg" title="非Root用户无法显示jps结果"></p>
-<h4 id="二、原因分析"><a href="#二、原因分析" class="headerlink" title="二、原因分析"></a>二、原因分析</h4><p>jps需要在tmp下创建一个hsperfdata_username的目录，用来存放进程的ip，所以检查一下/tmp/hsperfdata_username是否存在，如果不存在则自己创建一个，然后再检查权限。<br><img src="/2018/12/10/非Root用户无法显示jps结果/2.jpg" title="非Root用户无法显示jps结果"></p>
+        <h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>非root用户执行jps命令时不显示结果，如图：<br><img src="/2018/12/10/非Root用户无法显示jps结果/12/10/非Root用户无法显示jps结果/1.jpg" title="非Root用户无法显示jps结果"></p>
+<h4 id="二、原因分析"><a href="#二、原因分析" class="headerlink" title="二、原因分析"></a>二、原因分析</h4><p>jps需要在tmp下创建一个hsperfdata_username的目录，用来存放进程的ip，所以检查一下/tmp/hsperfdata_username是否存在，如果不存在则自己创建一个，然后再检查权限。<br><img src="/2018/12/10/非Root用户无法显示jps结果/12/10/非Root用户无法显示jps结果/2.jpg" title="非Root用户无法显示jps结果"></p>
 <p>可以看出无法显示的原因是权限。</p>
 <h4 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h4><p>修改文件权限：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R hadoop<span class="selector-class">.hadoop</span> /tmp/hsperfdata_hadoop</span><br></pre></td></tr></table></figure></p>
-<img src="/2018/12/10/非Root用户无法显示jps结果/3.jpg" title="非Root用户无法显示jps结果">
-<h4 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h4><img src="/2018/12/10/非Root用户无法显示jps结果/4.jpg" title="非Root用户无法显示jps结果">
+<img src="/2018/12/10/非Root用户无法显示jps结果/12/10/非Root用户无法显示jps结果/3.jpg" title="非Root用户无法显示jps结果">
+<h4 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h4><img src="/2018/12/10/非Root用户无法显示jps结果/12/10/非Root用户无法显示jps结果/4.jpg" title="非Root用户无法显示jps结果">
         
         <br />
         <div id="comment-container">

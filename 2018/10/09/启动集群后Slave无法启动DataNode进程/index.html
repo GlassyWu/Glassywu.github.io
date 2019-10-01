@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="glassy&#39;s blog">
-    <meta name="keyword"  content="233">
+    <meta name="keyword" content="233">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -138,13 +138,13 @@
     </div>
     <div class="post-content ">
         <h4 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h4><p>执行start-all.sh后，slave进程中没有DataNode</p>
-<h4 id="二、问题查看"><a href="#二、问题查看" class="headerlink" title="二、问题查看"></a>二、问题查看</h4><p>去Slave的/hadoop/logs文件查看日志，信息如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/报错信息.jpg" title="启动集群后Slave无法启动DataNode进程"></p>
+<h4 id="二、问题查看"><a href="#二、问题查看" class="headerlink" title="二、问题查看"></a>二、问题查看</h4><p>去Slave的/hadoop/logs文件查看日志，信息如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/报错信息.jpg" title="启动集群后Slave无法启动DataNode进程"></p>
 <p>表明：造成无法启动DataNode进程的原因是namenode的clusterID和datanode的clusterID不匹配，一般造成这种问题的原因是多次执行了namenode格式化命令：<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenode -<span class="built_in">format</span></span><br></pre></td></tr></table></figure></p>
 <p>ok,直接分别去查看响应的文件是否真的如此：</p>
-<h6 id="1-查看slave："><a href="#1-查看slave：" class="headerlink" title="1.查看slave："></a>1.查看slave：</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/slave截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/slave-version.jpg" title="启动集群后Slave无法启动DataNode进程">
-<h6 id="2-查看master"><a href="#2-查看master" class="headerlink" title="2.查看master:"></a>2.查看master:</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/master截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/master-version.jpg" title="启动集群后Slave无法启动DataNode进程">
+<h6 id="1-查看slave："><a href="#1-查看slave：" class="headerlink" title="1.查看slave："></a>1.查看slave：</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/slave截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/slave-version.jpg" title="启动集群后Slave无法启动DataNode进程">
+<h6 id="2-查看master"><a href="#2-查看master" class="headerlink" title="2.查看master:"></a>2.查看master:</h6><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/master截图.jpg" title="启动集群后Slave无法启动DataNode进程"><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/master-version.jpg" title="启动集群后Slave无法启动DataNode进程">
 <p><strong>ps:对比红色线框内容即可，图中为已修改完成的结果，二者一致即可！</strong></p>
-<h4 id="三、结果"><a href="#三、结果" class="headerlink" title="三、结果"></a>三、结果</h4><p>重新执行start-all.sh命令，然后在slave执行jps，结果如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/结果.jpg" title="启动集群后Slave无法启动DataNode进程"></p>
+<h4 id="三、结果"><a href="#三、结果" class="headerlink" title="三、结果"></a>三、结果</h4><p>重新执行start-all.sh命令，然后在slave执行jps，结果如下：<br><img src="/2018/10/09/启动集群后Slave无法启动DataNode进程/10/09/启动集群后Slave无法启动DataNode进程/结果.jpg" title="启动集群后Slave无法启动DataNode进程"></p>
 <p>恢复正常:)</p>
 
         
